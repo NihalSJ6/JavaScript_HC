@@ -50,3 +50,33 @@ const myFunction = function() {
 }
 
  console.log(typeof myFunction); //returns function
+
+ 
+
+ //Stack (Primitive), Heap (Non-primitive)
+
+
+ //STACK
+let myName = "nihaljasti"
+let anotherName = myName 
+//copy of stack where value of var myName stored is 
+//created -> call by value
+anotherName = "aneeshjasti" 
+
+console.log(myName) //returns nihaljasti
+console.log(anotherName); //returns aneeshjasti cuz call by value
+
+
+//HEAP
+let userOne = {
+    email: "nsj@gmail.com",
+    upiId: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "aneesh@gmail.com"
+
+console.log(userOne.email); // returns "aneesh@gmail.com"
+console.log(userTwo.email); //returns "aneesh@gmail.com" cuz call by reference
+
