@@ -37,7 +37,7 @@ const JsUser = {
 // console.log(JsUser);
 
 
-// we call add properties dynamically also in an object
+// we call and add properties dynamically also in an object
 JsUser.greeting = function() {
     console.log('Hello JS user');
 }

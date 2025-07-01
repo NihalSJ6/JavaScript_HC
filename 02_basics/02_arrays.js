@@ -9,7 +9,7 @@ const dc_heros = ['superman','batman','flash']
 // console.log("B ",newHeroArray);
 
 
-//spread operator - no matter how many arrays, can combine all of them , better than concat for c
+//spread operator - no matter how many arrays, can combine all of them , better than concat for 
 // combining arrays
 const all_New_Heros = [...marvel_heros, ...dc_heros]
 console.log(all_New_Heros);
