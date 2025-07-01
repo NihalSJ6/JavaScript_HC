@@ -86,6 +86,6 @@ const course = {
 
 //Syntactical sugar
 const {courseInstructor : instructor} = course
-console.log(instructor);
+// console.log(instructor);
 
 
