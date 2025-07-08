@@ -118,3 +118,5 @@ const myCoding = [
 myCoding.forEach( (item) => {
     console.log(item.languageFileName);
 })
+
+//in forEach we can't return anything even if we want to
