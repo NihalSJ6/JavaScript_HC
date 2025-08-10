@@ -19,11 +19,13 @@
         document.querySelector('h1').innerHTML = 'Best JS Series'
     }
 
-    setTimeout(changeText, 1000)
-     
+    const changeMe = (changeText, 3000); //changing text 
 
-
-
-    
+    document.querySelector('#stop').addEventListener('click',
+        function () {
+            clearTimeout(changeMe) //stop the event
+            console.log('STOPPED');  
+        }
+    )
 </script>
 </html>
