@@ -106,3 +106,99 @@ setInterval(function(){
 }, 1000)
 
  ```
+
+
+ ## Project 5
+
+ ```javascript
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Event KeyCodes</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid #e7e7e7;
+      }
+      .project {
+        background-color: #1c1c1c;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+      }
+
+      .color {
+        color: aliceblue;
+        display: flex;
+        flex-direction: row;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
+        >Youtube channel</a
+      >
+    </nav>
+    <div class="project">
+      <div id="insert">
+        <div class="key">Press the key and watch magic</div>
+      </div>
+    </div>
+
+    <script src="./chaiaurcode.js"></script>
+  </body>
+</html>
+ ```
+
+
+
+ ## Project 6
+ ```javascript
+
+ //generate a random color
+
+const randomColor = function() {
+  const hex = "0123456789ABCDEF"
+
+  let color = '#'
+
+  for(let i=0; i<6; i++) {
+    color += hex[Math.floor(Math.random() * 16)]
+  }
+  return color;
+}
+
+let intervalId; //declaring the var in global scope
+
+const startChangingColor = function() {
+  if(!intervalId) {
+    intervalId = setInterval(changeBackgroundColor, 2000)
+  }
+
+  function changeBackgroundColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+}
+
+const stopChangingColor = function() {
+  clearInterval(intervalId);
+  intervalId = null; //flushout intervalID after clearInterval
+}
+
+document.querySelector('#start').addEventListener('click', startChangingColor)
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor)
+
+console.log(randomColor())
+
+ ```
