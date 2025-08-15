@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur Coffee (winter)</title>
+</head>
+
+<body style="background-color : #313131">
+    <button id = "orange">Orange</button>
+    <button id = "green">Green</button>
+</body>
+
+    <script>
+
+        /* child fucntions can access properties of parent fucntion,
+        but the child functions wapas me don't share any properties btw them
+        and also the Parent function can't acces properties of child function  */
+
+
+        //Lexical scoping example
+        // function outer() {
+        //     let username = "nihal"
+        //     //console.log(secret); //error
+            
+
+        //     function innerOne() {
+        //         let secret = "123"
+        //         console.log("inner", username); // use variable declared in the parent function
+        //     }
+
+        //     function innerTwo() {
+        //         console.log("innerTwo", username); // use variable declared in the parent function
+        //         //console.log(secret); //error
+        //     }
+
+        //     innerOne();
+        //     innerTwo();
+
+        // }
+
+        // outer()
+        // console.log("TOO OUTER", username); //error
+
+
+
+
+        /* Closure -> 
+        
+        Outer Function Execution: When the outer function is called, it creates its 
+        own execution context and defines its local variables.
+
+        Inner Function Definition: The inner function is defined within the outer
+       function's scope, forming a closure. The inner function's definition retains a
+        reference to the outer function's lexical environment (which includes its variables).
+ 
+        Outer Function Returns: The outer function finishes execution, and its variables would 
+        typically be garbage collected.
+
+        Inner Function Invoked: Even though the outer function has finished, the inner function, now the closure, 
+        still has access to the outer function's variables and can continue to interact with them.   */
+
+
+
+        // function makeFunc() {
+        //     const name = "Chrome";  // 'name' is a local variable within makeFunc's scope
+
+
+        //     function displayName() {
+        //         console.log(name); // displayName accesses 'name' from its outer scope
+        //     }
+
+        //     return displayName;   // makeFunc returns the inner function displayName
+        // }
+        
+        // const myFunc = makeFunc();
+        // myFunc();
+        
+    </script>
+
+
+<script>
+    // document.getElementById('orange').onclick = function() {
+    //     document.body.style.backgroundColor = "orange"
+    // }
+
+    // document.getElementById('green').onclick = function() {
+    //     document.body.style.backgroundColor = "green"
+    // }
+
+
+    function clickHandler(color) {
+    // document.body.style.backgroundColor = `${color}` 
+    // // This line is commented out and would change the color immediately when the function is defined, not on click
+    
+    return function() { // This inner function is the closure
+        document.body.style.backgroundColor = `${color}`; // It accesses the 'color' variable from the outer function's scope
+    };
+}
+
+document.getElementById('orange').onclick = clickHandler('orange'); // Assigning the returned closure as the event handler
+document.getElementById('green').onclick = clickHandler('green');   // Assigning the returned closure as the event handler
+
+     
+
+</script>
+    
+
+</html>
