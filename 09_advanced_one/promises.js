@@ -130,7 +130,7 @@ consumePromiseFive()
 // getAllUsers()
 
 
-
+//Fetch callbacks -> in priority queue
 fetch('https://jsonplaceholder.typicode.com/users')
 .then((response) => {
     return response.json()
